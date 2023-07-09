@@ -348,10 +348,6 @@ header .header .elements>div:not(.login):hover, header .header .elements>a:hover
     display: none;
 }
 
-.itembar{
-    background-color: darkgoldenrod;
-}
-
 #sort-title{
     color: black;
 }
@@ -405,10 +401,6 @@ header .header .elements>div:not(.login):hover, header .header .elements>a:hover
 
 
 /* Footer styles */
-
-footer{
-    
-}
 
 .footer{
     display: flex;

@@ -522,9 +522,9 @@ select{
     padding: 12px;
 }
 
-/* .profile-info{
+.profile-info{
     border: 1px solid pink;
-} */
+}
 
 .profile-info > table td{   
     font-size: 15pt;

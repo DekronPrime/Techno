@@ -59,7 +59,7 @@ body{
 }
 
 .btn-close{
-    background: url("../img/icons/cross.png") center/0.7em auto no-repeat;
+    background: url("../img/icons/cross_dark.png") center/0.7em auto no-repeat;
     /* transition: 0.5s background ease; */
 }
 
