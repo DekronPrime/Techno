@@ -1,5 +1,3 @@
-console.log("filter.js");
-
 const powers = [
     {id:"less450Vt", title:"Менше 450 Вт", 'data-min-power':0, 'data-max-power':450},
     {id:"between450n550Vt", title:"450 Вт - 550 Вт", 'data-min-power':450, 'data-max-power':550},
@@ -124,7 +122,6 @@ function addBrandCheckboxListeners() {
         });
     });
 }
-
 
 function getSelectedBrands(checkboxes) {
     const selectedBrands = [];
@@ -345,16 +342,16 @@ minPriceInput.addEventListener('input', fetchProductsByPrice);
 maxPriceInput.addEventListener('input', fetchProductsByPrice);
 
 function fetchProductsByPrice() {
-  const minPrice = parseInt(minPriceInput.value);
-  const maxPrice = parseInt(maxPriceInput.value);
-  let priceRange = {};
-  if (!isNaN(minPrice) && minPrice > 0) {
-    priceRange.minPrice = minPrice;
-  }
-  if (!isNaN(maxPrice) && maxPrice > 0) {
-    priceRange.maxPrice = maxPrice;
-  }
-  sendPriceRangeToServer(priceRange);
+    const minPrice = parseInt(minPriceInput.value);
+    const maxPrice = parseInt(maxPriceInput.value);
+    let priceRange = {};
+    if (!isNaN(minPrice) && minPrice > 0) {
+        priceRange.minPrice = minPrice;
+    }
+    if (!isNaN(maxPrice) && maxPrice > 0) {
+        priceRange.maxPrice = maxPrice;
+    }
+    sendPriceRangeToServer(priceRange);
 }
 
 async function sendPriceRangeToServer(priceRange) {

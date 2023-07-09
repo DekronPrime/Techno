@@ -7,6 +7,8 @@
 
     <title>Power Supply for PC</title>
 
+    <link rel="icon" type="image/x-icon" href="/img/icons/favicon.png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -89,9 +91,7 @@
                             <% } %>
                         <% } %>     
                     </div>
-
             </div>
-           
         </header>
 
         <main>
@@ -191,9 +191,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                              </div>
-
+                            </div>
                         </div>
                     </div>
                     <div class="sidebar-overlay sidebar-display" data-bs-dismiss="offcanvas"></div>
@@ -223,8 +221,7 @@
                         </div>
                         <div class="itembar container d-flex justify-content-start flex-wrap pb-2"></div>
                     </div>    
-                </div>
-                
+                </div>   
             </div>
         </main>
 
@@ -248,17 +245,16 @@
                             Контактна інформація
                         </div>
                         <div class="section-content contact-content">
-                                <table>
-                                    <tr>
-                                        <td><span class="contact-phone">+38(097-111-11-11)</span></td>
-                                        <td><span id="contact-email">cyberpatrick@gmail.com</span></td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td><span class="contact-phone">+38(097-777-77-77)</span></td>
-                                        <td><span id="contact-email">forpresentelite@gmail.com</span></td>
-                                    </tr>
-                                </table>
+                            <table>
+                                <tr>
+                                    <td><span class="contact-phone">+38(097-111-11-11)</span></td>
+                                    <td><span class="contact-phone">+38(097-777-77-77)</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="contact-email">forpresentelite@gmail.com</span></td>
+                                    <td><span id="contact-email">cyberpatrick@gmail.com</span></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <div class="section section-3">
@@ -275,7 +271,6 @@
         </footer>
     </div>
 
-    
     <div class="modal-container container-fluid m-0 p-0">
         <div class="overlay" data-close="true" id="modal-overlay"></div>
     
@@ -395,7 +390,6 @@
                             </div>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="2"><label for="price" class="char">Ціна товару:</label></td>
                         <td><input type="number" name="price" id="price" class="short input_text no-arrows" placeholder="8 999"></td>
@@ -408,7 +402,6 @@
                         <td><label for="discount" class="char toggle">Знижка:</label></td>
                         <td><input type="number" id="discount" name="discount" class="input_text short toggle no-arrows" placeholder="5"></td>
                         <td><label for="discount" class="measure toggle">%</label></td>
-                        
                     </tr>
                     <tr class="last">
                         <td></td>
@@ -500,24 +493,26 @@
                 </button>
             </div>
             <div class="modal_body">
-                <div class="profile-image">
-                    <img src="img/icons/user_light.png" alt="">
-                </div>
-                <div class="profile-info">
-                    <table>
-                        <tr>
-                            <td>Нікнейм:</td>
-                            <td id="user-nickname"></td>
-                        </tr>
-                        <tr>
-                            <td>Email:</td>
-                            <td id="user-email"></td>
-                        </tr>
-                        <tr>
-                            <td>Статус:</td>
-                            <td id="user-status"></td>
-                        </tr>
-                    </table>
+                <div class="profile-content">
+                    <div class="profile-image">
+                        <img src="img/icons/user_light.png" alt="">
+                    </div>
+                    <div class="profile-info">
+                        <table>
+                            <tr>
+                                <td>Нікнейм:</td>
+                                <td id="user-nickname"></td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td id="user-email"></td>
+                            </tr>
+                            <tr>
+                                <td>Статус:</td>
+                                <td id="user-status"></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="modal_footer">
@@ -544,6 +539,6 @@
     <script src="js/sort.js"></script>
     <script src="js/search.js"></script>
     <script src="js/general.js"></script>
-    
+
 </body>
 </html>

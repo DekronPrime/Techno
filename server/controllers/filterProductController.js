@@ -123,7 +123,6 @@ router.post('/price', async (req, res) => {
     const { minPrice, maxPrice } = req.body;
     try {
         let products;
-    
         if (minPrice && maxPrice) {
             products = await Product.find({
             price: { $gte: minPrice, $lte: maxPrice }
@@ -135,7 +134,6 @@ router.post('/price', async (req, res) => {
         } else {
             products = await Product.find();
         }
-    
         res.send(products);
     } catch (error) {
         console.error(error);
@@ -144,4 +142,3 @@ router.post('/price', async (req, res) => {
   });
 
 module.exports = router;
-

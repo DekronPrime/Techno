@@ -36,7 +36,6 @@ router.post("/signup", async(req, res) => {
     else {
         try {
             registerData.isAdmin = false;
-            console.log(registerData);
             const toSave = User({
                 user_nickname: registerData.nickname,
                 user_email: registerData.email,
@@ -53,10 +52,10 @@ router.post("/signup", async(req, res) => {
             res.sendStatus(200);
         } catch (err) {
             if (err.code === 11000) {
-                return response.sendStatus(403);    // account already exists
+                return response.sendStatus(403);
             } else {
-            console.log(err);
-            return response.sendStatus(500);
+                console.error(err);
+                return response.sendStatus(500);
             }
         }
     }

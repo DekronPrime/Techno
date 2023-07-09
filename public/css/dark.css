@@ -5,9 +5,6 @@ body{
     background-color: black;
 }
 
-
-/* Header styles */
-
 .upper_header {
     background-color: rgb(33, 37, 41);
 }
@@ -37,10 +34,8 @@ body{
     border-bottom: 3px solid orange;
     background-color: orange;
 }
-/*  */
 
 .offcanvas{
-    /* background-color: darkcyan; */
     background-color: rgb(33, 37, 41);
 }
 
@@ -50,7 +45,6 @@ body{
 
 .btn-close{
     background: url("../img/icons/cross_light.png") center/0.7em auto no-repeat;
-    /* transition: 0.5s background ease; */
 }
 .btn-close:hover{
     background-color: rgba(255, 255, 255, 0.102);

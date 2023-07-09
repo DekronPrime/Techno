@@ -1,5 +1,3 @@
-console.log("search.js");
-
 const searchInput = document.querySelector('.search > #search');
 const searchButton = document.querySelector('.icon_search');
 
@@ -11,7 +9,7 @@ searchInput.addEventListener("input", async () => {
         body: JSON.stringify({ searchQuery: searchValue })
     })
     const products = await result.json();
-    displayProducts(products)
+    displayProducts(products);
 })
 
 searchButton.addEventListener("click", async () => {

@@ -1,5 +1,3 @@
-console.log("modalLogin.js");
-
 let signBtn = document.querySelector(".sign_btn");
 
 const loginContainer = document.getElementById("login-table");
@@ -78,7 +76,6 @@ function isValidRegister(formData){
 
 loginConfirmBtn.addEventListener("click", async () => {
     const formData = new FormData(document.querySelector("#login-form"));
-    /* console.log(...formData); */
     if (!isValidLogin(formData))
         alert("Некоректні дані. Заповніть всі поля та перевірте їх значення")
     else {
@@ -95,7 +92,6 @@ loginConfirmBtn.addEventListener("click", async () => {
             body: JSON.stringify(loginData)
         });
         if (result.ok) {
-            console.log("it works");
             window.location.href = '/';
             hideModal();
         } else {
@@ -106,7 +102,6 @@ loginConfirmBtn.addEventListener("click", async () => {
 
 registerConfirmBtn.addEventListener("click", async () => {
     const formData = new FormData(document.querySelector("#login-form"));
-    /* console.log(...formData); */
     if (!isValidRegister(formData))
         alert("Некоректні дані. Заповніть всі поля та перевірте їх значення")
     else {
@@ -124,7 +119,6 @@ registerConfirmBtn.addEventListener("click", async () => {
             body: JSON.stringify(registerData)
         });
         if (result.ok) {
-            console.log("it works");
             window.location.href = '/';
             hideModal();
         } else {

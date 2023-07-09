@@ -11,16 +11,11 @@ const upload = multer({ dest: 'uploads/' });
 router.post('/add', upload.single("file"), async (req, res) => {
     let obj = req.body;
     let img = req.file;
-    /* console.log(obj);
-    console.log(img); */
     if (obj) {
         const imgSecureUrl = await cloudinary.uploadImage(img.path);
         fs.unlink(img.path, (err) => {
             if (err)
                 console.error(err);
-            else {
-                /* console.log("Image was successfully deleted"); */
-            }
         })
         let productData = new Product(obj);
         productData.cloudinaryPublicUrl = imgSecureUrl;
@@ -32,7 +27,6 @@ router.post('/add', upload.single("file"), async (req, res) => {
             res.sendStatus(500).send(err);
         }
     } else {
-        console.log("something went wrong while receiving data from Product Form");
         return res.sendStatus(400);
     }
 })
@@ -52,8 +46,6 @@ router.put('/update/:id', upload.single("file"), async (req, res) => {
             const oldImgUrl = (await Product.findById(productId)).cloudinaryPublicUrl;
             const oldImgId = getImgIdFromCloudinary(oldImgUrl);
             const delImgRes = await cloudinary.destroyImage(oldImgId);      
-        } else {
-            /* console.log("old image"); */
         }
         try {
             const result = await Product.findByIdAndUpdate(productId, obj);
@@ -62,7 +54,6 @@ router.put('/update/:id', upload.single("file"), async (req, res) => {
             console.error(err);
         }
     } else {
-        console.log("obj is empty...");
         res.sendStatus(404).send(error);
     }
 })
@@ -76,9 +67,7 @@ router.delete('/delete', async (req, res) => {
     const delId = req.body.id;
     const result = await Product.findByIdAndDelete(delId);
     try {
-        if (!result)
-            console.log(`no product with id: ${delId}`);
-        else {
+        if (result) { 
             const imgPath = result.cloudinaryPublicUrl;
             const imgId = getImgIdFromCloudinary(imgPath);
             const delImgRes = await cloudinary.destroyImage(imgId);
@@ -92,11 +81,9 @@ router.delete('/delete', async (req, res) => {
 
 router.get('/single/:id', async (req, res) => {
     const productId = req.params.id;
-    /* console.log(productId); */
     try {
         const product = await Product.findById(productId);
         if (!product) {
-            console.log(`No product with id: ${productId}`);
             res.status(404).send("Product not found");
         } else {
             res.send(product);
@@ -154,7 +141,6 @@ router.get("/brands", async (req, res) => {
           'data-brand': brand
         }))
         .sort((a, b) => a.title.localeCompare(b.title));
-        /* console.log(uniqueBrands); */
         res.send(uniqueBrands);
     } catch (err) {
         console.error(err);

@@ -6,9 +6,6 @@ body{
     color: white;
 }
 
-
-/* Header styles */
-
 .upper_header {
     background-color: lavender;
 }
@@ -28,7 +25,6 @@ body{
 
 .login>button{
     background-color: rgba(255, 255, 255, 0.5);
-    /* background-color: rgba(0, 0, 0, 0.2); */
 }
 
 .items_header{
@@ -39,7 +35,6 @@ body{
 .itembar{
     background-color: rgb(119, 119, 119);
 }
-/*  */
 
 .line{
     background-color: black;
@@ -60,7 +55,6 @@ body{
 
 .btn-close{
     background: url("../img/icons/cross_dark.png") center/0.7em auto no-repeat;
-    /* transition: 0.5s background ease; */
 }
 
 footer{

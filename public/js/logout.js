@@ -1,5 +1,3 @@
-console.log("logout.js");
-
 const logoutBtn = document.querySelectorAll(".logout_btn");
 logoutBtn.forEach(btn => {
     btn.addEventListener("click", async () => {
@@ -12,7 +10,6 @@ async function logout() {
         method: "POST"
     });
     if (result.ok) {
-        console.log("Logout");
         window.location.href = '/';
     }
 }

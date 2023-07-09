@@ -1,5 +1,3 @@
-console.log("sort.js");
-
 const dropdownItems = document.querySelectorAll(".dropdown-item");
 const dropdownButton = document.querySelector("#btnSortDrop");
 

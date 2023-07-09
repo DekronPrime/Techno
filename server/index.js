@@ -10,7 +10,6 @@ require("dotenv/config");
 
 require("./db");
 
-// express app
 const app = express();
 
 app.set("view engine", "ejs");
@@ -35,11 +34,6 @@ app.use("/auth", authController);
 app.use("/user", userController);
 app.use("/", homeController);
 
-app.use("/settings", (req, res) => {
-    /* res.redirect("../public/views/settings") */
-});
-
-// app listen
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {

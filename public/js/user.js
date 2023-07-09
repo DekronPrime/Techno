@@ -64,7 +64,7 @@ async function addToCart(id) {
                 </table>
             </div>
             <div class="cart-item-delete">
-                <img src="img/icons/cross.png" alt="">
+                <img src="img/icons/cross_dark.png" alt="">
             </div>
         `;
 

@@ -1,5 +1,3 @@
-/* console.log("script.js"); */
-
 async function refreshProducts() {
     const receivedData = await fetch('/products/list', { method: 'GET' })
     if (receivedData.ok) {
@@ -10,7 +8,6 @@ async function refreshProducts() {
         console.log("something went wrong while receiving data from server...");
 }
 refreshProducts();
-
 
 const itemContainer = document.querySelector(".itembar");
 
@@ -135,6 +132,7 @@ function showModal(modalId) {
 
 function hideModal() {
     document.forms["productForm"].reset();
+    document.querySelector("#product-form .image > img").setAttribute("src","");
     document.forms["loginForm"].reset();
     setTimeout(function() {
         modalOverlay.style.display = "none";

@@ -1,5 +1,3 @@
-console.log("account.js");
-
 let accountBtn = document.querySelector(".profile");
 
 accountBtn.addEventListener("click", async () => {
@@ -10,8 +8,6 @@ accountBtn.addEventListener("click", async () => {
     })
     if (result.ok) {
         const profileData = await result.json();
-        console.log("Data received");
-        console.log(profileData);
         setupProfile(profileData);
         
     } else {
@@ -34,26 +30,12 @@ function setupProfile(profileData) {
     emailField.innerHTML = profileData.user_email;
     if (profileData.isAdmin) {
         statusField.innerHTML = "Адміністратор";
-        profileImage.setAttribute("src", "img/icons/admin_light.png")
+        profileImage.setAttribute("src", "img/icons/admin_dark.png")
     } else {
         statusField.innerHTML = "Користувач";
-        profileImage.setAttribute("src", "img/icons/user_light.png")
+        profileImage.setAttribute("src", "img/icons/user_dark.png")
     }
 }
-
-/* profile.addEventListener("mouseenter", () => {
-    profileImg.setAttribute("src", "../img/icons/admin.png");
-})
-
-profile.addEventListener('mouseleave', () => {
-    const computedStyle = getComputedStyle(text);
-    const textColor = computedStyle.color;
-    if (textColor === "rgb(0, 0, 0)") {
-        profileImg.setAttribute("src", "../img/icons/admin.png");
-    } else if (textColor === "rgb(255, 255, 255)") {
-        profileImg.setAttribute("src", "../img/icons/admin_light.png");
-    }
-}); */
 
 const upperHeader = document.querySelector("header > .upper_header");
 upperHeader.classList.remove("d-none");

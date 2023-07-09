@@ -1,5 +1,3 @@
-console.log("admin.js");
-
 const createBtn = document.querySelector(".create_btn");
 
 createBtn.addEventListener("click", function() {
@@ -17,7 +15,6 @@ logoutBlock.addEventListener("click", async () => {
 let addBtn = document.querySelector(".add_btn");
 addBtn.addEventListener("click", async function() {
     const formData = new FormData(document.querySelector("#product-form"));
-    /* console.log(...formData); */
     if (!isValidProduct(formData) || !isValidImage(formData))
         alert("Дані продукту не є коректними. Заповніть всі поля та перевірте їх значення");
     else {
@@ -26,7 +23,6 @@ addBtn.addEventListener("click", async function() {
             body: formData
         })
         if (result.ok) {
-            /* console.log("Successfully written."); */
             refreshProducts();
             displayBrands();
         } else {
@@ -62,7 +58,7 @@ function isValidProduct(formData) {
     const validProducers = [...brandOptions].map(option => option.value);
     const isProducerValid = validProducers.includes(producer);
 
-    const modelRegex = /^[a-zA-Z0-9\-]+$/;
+    const modelRegex = /^[ a-zA-Z0-9\-]+$/;
     const isModelValid = modelRegex.test(model);
 
     const isPowerValid = /^\d+$/.test(power) && Number(power) > 0 && Number(power) <= 3000;
@@ -152,7 +148,6 @@ async function updateElementInDB(id) {
             body: formData
         })
         if (result.ok) {
-            /* console.log("product was successfully updated"); */
             refreshProducts();
             displayBrands();
             hideModal();
@@ -172,7 +167,6 @@ async function removeElementFromDB(id) {
         body: obj
     })
     if (result.ok) {
-        /* console.log("product was successfully deleted"); */
         refreshProducts();
         displayBrands();
     } else 
