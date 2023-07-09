@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     /* Theme toggle function */
 
-    
-
     let themeToggle = document.querySelector('.theme_toggle');
     let icons = document.querySelectorAll(".icon");
     let localOldTheme = localStorage.getItem("isDarkTheme");
@@ -43,19 +41,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    function getIconName(iconName, isDarkTheme) {
+/*     function getIconName(iconName, isDarkTheme) {
         if (!isDarkTheme) 
             return iconName.replace("_light.png", "_dark.png");
         else 
             return iconName.replace("_dark.png", "_light.png");
-    }
+    } */
 
     function updateIcons() {
+        const isTheme = localStorage.getItem("isDarkTheme");
+        let currentTheme;
+        if (isTheme)
+            currentTheme = "dark";
+        else 
+            currentTheme = "light";
         icons.forEach(function(icon){
             let iconName = icon.getAttribute("src");
             let updatedIconName = getIconName(iconName, isDarkTheme);
             setTimeout(function() {
-                icon.setAttribute("src", updatedIconName);
+                icon.setAttribute("src", `img/src/`);
             }, 250);
         });
     }
